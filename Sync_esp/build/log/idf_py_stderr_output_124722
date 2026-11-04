@@ -1,0 +1,33 @@
+Command: cmake -G Ninja -B /home/sourish/AGUA-Uart/build -DPYTHON_DEPS_CHECKED=1 -DPYTHON=/home/sourish/.espressif/python_env/idf6.0_py3.14_env/bin/python -DESP_PLATFORM=1 -DCCACHE_ENABLE=False /home/sourish/AGUA-Uart
+NOTE: /home/sourish/esp-idf-v6.0.2/components/bt/host/nimble/Kconfig.in:1421: BT_NIMBLE_MESH_PROVISIONER: 'default 0' is not a valid bool value (only 'y' and 'n' are allowed). Value is treated as 'n'.
+NOTE: /home/sourish/esp-idf-v6.0.2/components/bt/controller/esp32/Kconfig.in:177: BTDM_CTRL_LEGACY_AUTH_VENDOR_EVT_EFF: 'default 0' is not a valid bool value (only 'y' and 'n' are allowed). Value is treated as 'n'.
+NOTE: /home/sourish/esp-idf-v6.0.2/components/fatfs/Kconfig:230: FATFS_PRINT_LLI: 'default 0' is not a valid bool value (only 'y' and 'n' are allowed). Value is treated as 'n'.
+NOTE: /home/sourish/esp-idf-v6.0.2/components/fatfs/Kconfig:235: FATFS_PRINT_FLOAT: 'default 0' is not a valid bool value (only 'y' and 'n' are allowed). Value is treated as 'n'.
+NOTE: /home/sourish/esp-idf-v6.0.2/components/bootloader/Kconfig.projbuild:385: Deprecation notice: hex literal '0' without '0x' prefix detected. In the next major version, hex literals will be required to have a '0x' prefix.
+NOTE: /home/sourish/esp-idf-v6.0.2/components/bootloader/Kconfig.projbuild:425: Deprecation notice: hex literal '0' without '0x' prefix detected. In the next major version, hex literals will be required to have a '0x' prefix.
+NOTE: /home/sourish/esp-idf-v6.0.2/components/bt/common/Kconfig.in:131: Deprecation notice: hex literal '0' without '0x' prefix detected. In the next major version, hex literals will be required to have a '0x' prefix.
+NOTE: /home/sourish/esp-idf-v6.0.2/components/bt/host/nimble/Kconfig.in:1016: Deprecation notice: hex literal '0' without '0x' prefix detected. In the next major version, hex literals will be required to have a '0x' prefix.
+NOTE: /home/sourish/esp-idf-v6.0.2/components/bt/controller/esp32/Kconfig.in:542: Deprecation notice: hex literal '0' without '0x' prefix detected. In the next major version, hex literals will be required to have a '0x' prefix.
+NOTE: /home/sourish/esp-idf-v6.0.2/components/esp_hw_support/./lowpower/port/esp32p4/Kconfig.p4_rev3_mspi_workaround:6: Deprecation notice: hex literal '0' without '0x' prefix detected. In the next major version, hex literals will be required to have a '0x' prefix.
+NOTE: /home/sourish/esp-idf-v6.0.2/components/esp_mm/Kconfig:20: Deprecation notice: hex literal '0' without '0x' prefix detected. In the next major version, hex literals will be required to have a '0x' prefix.
+NOTE: /home/sourish/esp-idf-v6.0.2/components/esp_system/./port/soc/esp32/Kconfig.memory:24: Deprecation notice: hex literal '0' without '0x' prefix detected. In the next major version, hex literals will be required to have a '0x' prefix.
+NOTE: /home/sourish/esp-idf-v6.0.2/components/openthread/Kconfig:106: Deprecation notice: hex literal '0' without '0x' prefix detected. In the next major version, hex literals will be required to have a '0x' prefix.
+NOTE: Kconfig parser version: 1
+NOTE: Kconfig defaults policy: use sdkconfig
+NOTE: Status: Finished successfully
+CMake Deprecation Warning at build/_deps/etl-src/CMakeLists.txt:4 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+CMake Error at build/_deps/etl-src/cmake/helpers.cmake:13 (git_describe):
+  git_describe Function invoked with incorrect arguments for function named:
+  git_describe
+Call Stack (most recent call first):
+  build/_deps/etl-src/CMakeLists.txt:9 (determine_version_with_git)
+
+

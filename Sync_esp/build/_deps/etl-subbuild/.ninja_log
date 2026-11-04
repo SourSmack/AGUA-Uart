@@ -1,0 +1,21 @@
+# ninja log v6
+0	5	1793825295292811258	etl-populate-prefix/src/etl-populate-stamp/etl-populate-mkdir	affa4a087cd906e5
+0	5	1793825295292811258	/home/sourish/AGUA-Uart/build/_deps/etl-subbuild/etl-populate-prefix/src/etl-populate-stamp/etl-populate-mkdir	affa4a087cd906e5
+5	3829	1793825299116903568	etl-populate-prefix/src/etl-populate-stamp/etl-populate-download	446e5738e15c90ab
+5	3829	1793825299116903568	/home/sourish/AGUA-Uart/build/_deps/etl-subbuild/etl-populate-prefix/src/etl-populate-stamp/etl-populate-download	446e5738e15c90ab
+3829	3838	1793825299116903568	etl-populate-prefix/src/etl-populate-stamp/etl-populate-update	ccf6a375bd53526d
+3829	3838	1793825299116903568	/home/sourish/AGUA-Uart/build/_deps/etl-subbuild/etl-populate-prefix/src/etl-populate-stamp/etl-populate-update	ccf6a375bd53526d
+3838	3842	1793825299129903882	etl-populate-prefix/src/etl-populate-stamp/etl-populate-patch	3aa34e95b7ee7d19
+3838	3842	1793825299129903882	/home/sourish/AGUA-Uart/build/_deps/etl-subbuild/etl-populate-prefix/src/etl-populate-stamp/etl-populate-patch	3aa34e95b7ee7d19
+3842	3846	1793825299132903954	etl-populate-prefix/src/etl-populate-stamp/etl-populate-configure	952414f05474bfc9
+3842	3846	1793825299132903954	/home/sourish/AGUA-Uart/build/_deps/etl-subbuild/etl-populate-prefix/src/etl-populate-stamp/etl-populate-configure	952414f05474bfc9
+3846	3850	1793825299136904051	etl-populate-prefix/src/etl-populate-stamp/etl-populate-build	873b87eba635ad6d
+3846	3850	1793825299136904051	/home/sourish/AGUA-Uart/build/_deps/etl-subbuild/etl-populate-prefix/src/etl-populate-stamp/etl-populate-build	873b87eba635ad6d
+3850	3854	1793825299140904148	etl-populate-prefix/src/etl-populate-stamp/etl-populate-install	7292a8af92ea5168
+3850	3854	1793825299140904148	/home/sourish/AGUA-Uart/build/_deps/etl-subbuild/etl-populate-prefix/src/etl-populate-stamp/etl-populate-install	7292a8af92ea5168
+3854	3858	1793825299144904244	etl-populate-prefix/src/etl-populate-stamp/etl-populate-test	df180c5afd841503
+3854	3858	1793825299144904244	/home/sourish/AGUA-Uart/build/_deps/etl-subbuild/etl-populate-prefix/src/etl-populate-stamp/etl-populate-test	df180c5afd841503
+3858	3863	1793825299149904365	CMakeFiles/etl-populate-complete	a3c25e782670eace
+3858	3863	1793825299149904365	etl-populate-prefix/src/etl-populate-stamp/etl-populate-done	a3c25e782670eace
+3858	3863	1793825299149904365	/home/sourish/AGUA-Uart/build/_deps/etl-subbuild/CMakeFiles/etl-populate-complete	a3c25e782670eace
+3858	3863	1793825299149904365	/home/sourish/AGUA-Uart/build/_deps/etl-subbuild/etl-populate-prefix/src/etl-populate-stamp/etl-populate-done	a3c25e782670eace
