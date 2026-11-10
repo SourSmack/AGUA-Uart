@@ -23,20 +23,23 @@ public:
 };
 
 template< class T >
-class Queue{
+class EventQueue{
 private:
     T *queuePtr { nullptr } ;
 public:
-    Queue( T *ptr){
+    EventQueue( T *ptr){
         if ( ptr)  queuePtr = ptr ;
     }
     T* operator*(){ return queuePtr; } 
     bool recieve( void * event, uint32_t ticksToWait){
-        xQueueReceive( queuePtr,   event, ticksToWait );
-        }
+        if( xQueueReceive( queuePtr,   event, ticksToWait )  == pdPASS) return true ;
+        return false ;
+    }
 };
 
-template< class T = QueueHandle_t >
+template< 
+    class T = QueueHandle_t 
+    >
 class Sync_esp : Uart<SyncEsp> {
 private:
     uart_config_t uartCfg ; 
@@ -45,15 +48,19 @@ private:
     int rxPin  ;
     int txPin ;
     int queSize ;
-    Queue<T> &queHandle ; 
-
+    EventQueue<T> &queHandle ; 
     FREETask &task ;
+    uint16_t messageSize ;
+
+
+    etl::circular_buffer< etl::string<messageSize>, MAXBUFFOR> answerBuffer{}; 
+
 
     static void uart_task(void *arg)
     {   
         auto instance = *static_cast< Sync_esp* > arg ;
 
-        int8_t dtmp[64];
+        int8_t messageTmp[64];
         uart_event_t  event;  
         
         
@@ -62,7 +69,7 @@ private:
         {
             while ( FREETask::waitForNotify( FREETask::pauseBit , FREETask::MAX_DELAY )){}
 
-            if ( ! xQueueReceive( queHandle,   &event, portMAX_DELAY ))
+            if ( ! queHandle.receive( &event, portMAX_DELAY ))
                 continue;
 
             if ( event.type != UART_PATTERN_DET){
@@ -74,18 +81,19 @@ private:
             if (pos == -1)
                 continue ;
             
-            if (pos >= sizeof(dtmp)){
+            if (pos >= sizeof(messageTmp)){
                 uart_flush(uartNum);
                 continue;
             }
             
-            int readLen = uart_read_bytes(uartNum,  dtmp,  pos + 1 ,  pdMS_TO_TICKS(100));
-            dtmp[readLen] = '\0';
+            int readLen = uart_read_bytes(uartNum,  messageTmp,  pos + 1 ,  pdMS_TO_TICKS(100));
+            messageTmp[readLen] = '\0';
 
-            etl::string<32> tmpString{(char*)dtmp};
-            last_word = tmpString ;
+            if ( answerBuff.available() > 0 ) 
+                answerBuffer.push_back(etl::string<messageSize> tmpString{(char*)messageTmp} ) ;
 
-            eventGroup.setBits( colorSensorBit  );
+
+            //eventGroup.setBits( colorSensorBit  );
         }
 
          
@@ -95,7 +103,7 @@ private:
  
 public:
 
-    int send( etl::string<message_buffor_size> *arg  ) {
+    int send( void *arg  ) {
 
         uart_write_bytes( uartNum , arg , 
 
