@@ -22,21 +22,36 @@ public:
 
 };
 
+template< class T >
+class Queue{
+private:
+    T *queuePtr { nullptr } ;
+public:
+    Queue( T *ptr){
+        if ( ptr)  queuePtr = ptr ;
+    }
+    T* operator*(){ return queuePtr; } 
+    bool recieve( void * event, uint32_t ticksToWait){
+        xQueueReceive( queuePtr,   event, ticksToWait );
+        }
+};
+
+template< class T = QueueHandle_t >
 class Sync_esp : Uart<SyncEsp> {
 private:
-    pc_uart_config_t uartCfg ; 
+    uart_config_t uartCfg ; 
     uart_port_t  uartNum ;  
     int buffsize ; 
     int rxPin  ;
     int txPin ;
     int queSize ;
-    QueueHandle_t queHandle { nullptr }; 
+    Queue<T> &queHandle ; 
 
-    FREETask task{  nullptr } ;
+    FREETask &task ;
 
     static void uart_task(void *arg)
     {   
-        auto instance = *static_cast< Camera* > arg ;
+        auto instance = *static_cast< Sync_esp* > arg ;
 
         int8_t dtmp[64];
         uart_event_t  event;  
