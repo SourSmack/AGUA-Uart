@@ -22,6 +22,47 @@ public:
 
 };
 
+template< 
+    class transferData , 
+   class DestinationAvailable  = nullptr , 
+   class SourceAvailable  = nullptr,  
+   std::enable_if_t<std::is_invocable_v< transferData , Arg>, int> = 0
+       >
+class Courier{
+private;
+    Mission task ;
+    static void transfer(){
+        while ( !Mission::waitForNotify( Mission::event.stop , 0 )){
+
+            if ( Mission::waitForNotify( Mission::event.pause , 0  ){
+                while ( !Mission::waitForNotify( Mission::event.resume , Mission::MAX_DELAY )){}
+            }
+            // if nullptr delete code 
+            while ( SourceAvailable != nullptr &&   ! SourceAvaiable){ Mission::notify( sourceExhaustion ); Mission::waitForNotify( Mission::event.resume , Mission::MAX_DELAY) } 
+
+            while ( DestinationAvailable != nullptr &&  ! DestinationAvaiable){ Mission::notify( destinationExhaustion ); Mission::waitForNotify( Mission::event.resume , Mission::MAX_DELAY) } 
+            // if nullptr delete code 
+
+            transferData() ;
+
+
+        }
+    }
+
+public:
+    bool pauseTransfer();
+    bool stopTransfer();
+    bool resumeTransfer(); 
+    uint32_t verifyStatus( uint32_t status = nullptr ){
+        if (  status  ){
+            return Mission::waitForNotify( status , 0 ) ; 
+        }
+        return Mission::checkOnFlags() ; 
+    }
+
+}; 
+
+
 template< class T >
 class EventQueue{
 private:
@@ -38,38 +79,52 @@ public:
 };
 
 template< 
-    class T = QueueHandle_t 
+    class T = QueueHandle_t , 
+    class Message_t  
     >
 class Sync_esp : Uart<SyncEsp> {
 private:
     uart_config_t uartCfg ; 
     uart_port_t  uartNum ;  
-    int buffsize ; 
+
     int rxPin  ;
     int txPin ;
-    int queSize ;
+
+    // Courier ;
     EventQueue<T> &queHandle ; 
-    FREETask &task ;
+    Mission &task ;
+    
     uint16_t messageSize ;
+    uint16_t answerBuffSize ;
+
+    enum events : uin32_t {
+        ANSWER_BUFF_FULL = 1 << 1 ,
 
 
-    etl::circular_buffer< etl::string<messageSize>, MAXBUFFOR> answerBuffer{}; 
+    };
+
+    etl::circular_buffer< Message_t, answerBuffSize> answerBuffer{}; 
 
 
-    static void uart_task(void *arg)
-    {   
-        auto instance = *static_cast< Sync_esp* > arg ;
+    static void uart_task(void *arg){   
+        auto self = *static_cast< Sync_esp* > arg ;
 
         int8_t messageTmp[64];
         uart_event_t  event;  
         
         
 
-        while ( !FREETask::waitForNotify( FREETask::stopBit , 0 )) 
-        {
-            while ( FREETask::waitForNotify( FREETask::pauseBit , FREETask::MAX_DELAY )){}
+        while ( !Mission::waitForNotify( Mission::event.stop , 0 )){
+            if ( Mission::waitForNotify( Mission::event.pause , 0  ){
+                while ( !Mission::waitForNotify( Mission::event.resume , Mission::MAX_DELAY )){}
+            }
 
-            if ( ! queHandle.receive( &event, portMAX_DELAY ))
+            while ( !self.answerBuff.available() )  {
+                Mission::notify( self.ANSWER_BUFF_FULL ) ;
+                while( !Mission::waitForNotify( Mission::event.resume , Mission::MAX_DELAY){} 
+            }
+
+            if ( ! self.queHandle.receive( &event, portMAX_DELAY ))
                 continue;
 
             if ( event.type != UART_PATTERN_DET){
@@ -89,27 +144,36 @@ private:
             int readLen = uart_read_bytes(uartNum,  messageTmp,  pos + 1 ,  pdMS_TO_TICKS(100));
             messageTmp[readLen] = '\0';
 
-            if ( answerBuff.available() > 0 ) 
-                answerBuffer.push_back(etl::string<messageSize> tmpString{(char*)messageTmp} ) ;
 
+            self.answerBuffer.push( Message_t{ (char*)messageTmp } ) ;
 
-            //eventGroup.setBits( colorSensorBit  );
         }
+
+    }
 
          
         
-    }
+    
 
  
 public:
 
-    int send( void *arg  ) {
+    /*int send( void *arg  ) {
 
         uart_write_bytes( uartNum , arg , 
 
 
-    } 
-    int recieve( ... ) ; 
+    }*/ 
+    void check(){ ... } 
+
+    bool recieve( Message_t * destination  ) {
+        check() ;
+        if( !destination) return false ; 
+        if ( !answerBuffer.available() ) return false ;
+        *destination  =  answerBuffer.front() ; 
+        answerBuffer.pop() ;
+        return true ; 
+    }
 };
 
 
