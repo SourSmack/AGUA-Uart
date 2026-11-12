@@ -18,8 +18,8 @@ end
 
 # Load bootloader symbols
 set confirm off
-    add-symbol-file /home/sourish/AGUA-Uart/build/bootloader/bootloader.elf
+    add-symbol-file /home/sourish/AGUA-Uart/Sync_esp/build/bootloader/bootloader.elf
 set confirm on
 
 # Load application symbols
-file /home/sourish/AGUA-Uart/build/AGUA.elf
+file /home/sourish/AGUA-Uart/Sync_esp/build/AGUA.elf

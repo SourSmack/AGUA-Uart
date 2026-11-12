@@ -2,37 +2,37 @@
 	"sources" : 
 	[
 		{
-			"file" : "/home/sourish/AGUA-Uart/build/_deps/etl-subbuild/CMakeFiles/etl-populate"
+			"file" : "/home/sourish/AGUA-Uart/Sync_esp/build/_deps/etl-subbuild/CMakeFiles/etl-populate"
 		},
 		{
-			"file" : "/home/sourish/AGUA-Uart/build/_deps/etl-subbuild/CMakeFiles/etl-populate.rule"
+			"file" : "/home/sourish/AGUA-Uart/Sync_esp/build/_deps/etl-subbuild/CMakeFiles/etl-populate.rule"
 		},
 		{
-			"file" : "/home/sourish/AGUA-Uart/build/_deps/etl-subbuild/CMakeFiles/etl-populate-complete.rule"
+			"file" : "/home/sourish/AGUA-Uart/Sync_esp/build/_deps/etl-subbuild/CMakeFiles/etl-populate-complete.rule"
 		},
 		{
-			"file" : "/home/sourish/AGUA-Uart/build/_deps/etl-subbuild/etl-populate-prefix/src/etl-populate-stamp/etl-populate-build.rule"
+			"file" : "/home/sourish/AGUA-Uart/Sync_esp/build/_deps/etl-subbuild/etl-populate-prefix/src/etl-populate-stamp/etl-populate-build.rule"
 		},
 		{
-			"file" : "/home/sourish/AGUA-Uart/build/_deps/etl-subbuild/etl-populate-prefix/src/etl-populate-stamp/etl-populate-configure.rule"
+			"file" : "/home/sourish/AGUA-Uart/Sync_esp/build/_deps/etl-subbuild/etl-populate-prefix/src/etl-populate-stamp/etl-populate-configure.rule"
 		},
 		{
-			"file" : "/home/sourish/AGUA-Uart/build/_deps/etl-subbuild/etl-populate-prefix/src/etl-populate-stamp/etl-populate-download.rule"
+			"file" : "/home/sourish/AGUA-Uart/Sync_esp/build/_deps/etl-subbuild/etl-populate-prefix/src/etl-populate-stamp/etl-populate-download.rule"
 		},
 		{
-			"file" : "/home/sourish/AGUA-Uart/build/_deps/etl-subbuild/etl-populate-prefix/src/etl-populate-stamp/etl-populate-install.rule"
+			"file" : "/home/sourish/AGUA-Uart/Sync_esp/build/_deps/etl-subbuild/etl-populate-prefix/src/etl-populate-stamp/etl-populate-install.rule"
 		},
 		{
-			"file" : "/home/sourish/AGUA-Uart/build/_deps/etl-subbuild/etl-populate-prefix/src/etl-populate-stamp/etl-populate-mkdir.rule"
+			"file" : "/home/sourish/AGUA-Uart/Sync_esp/build/_deps/etl-subbuild/etl-populate-prefix/src/etl-populate-stamp/etl-populate-mkdir.rule"
 		},
 		{
-			"file" : "/home/sourish/AGUA-Uart/build/_deps/etl-subbuild/etl-populate-prefix/src/etl-populate-stamp/etl-populate-patch.rule"
+			"file" : "/home/sourish/AGUA-Uart/Sync_esp/build/_deps/etl-subbuild/etl-populate-prefix/src/etl-populate-stamp/etl-populate-patch.rule"
 		},
 		{
-			"file" : "/home/sourish/AGUA-Uart/build/_deps/etl-subbuild/etl-populate-prefix/src/etl-populate-stamp/etl-populate-test.rule"
+			"file" : "/home/sourish/AGUA-Uart/Sync_esp/build/_deps/etl-subbuild/etl-populate-prefix/src/etl-populate-stamp/etl-populate-test.rule"
 		},
 		{
-			"file" : "/home/sourish/AGUA-Uart/build/_deps/etl-subbuild/etl-populate-prefix/src/etl-populate-stamp/etl-populate-update.rule"
+			"file" : "/home/sourish/AGUA-Uart/Sync_esp/build/_deps/etl-subbuild/etl-populate-prefix/src/etl-populate-stamp/etl-populate-update.rule"
 		}
 	],
 	"target" : 

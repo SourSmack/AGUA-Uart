@@ -28,8 +28,8 @@ set_property(GLOBAL PROPERTY _CMAKE_FindGit_GIT_EXECUTABLE_VERSION
 include(ExternalProject)
 ExternalProject_Add(etl-populate
                      "UPDATE_DISCONNECTED" "False" "GIT_REPOSITORY" "https://github.com/etlcpp/etl.git" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR" "GIT_TAG" "20.38.2"
-                    SOURCE_DIR          "/home/sourish/AGUA-Uart/build/_deps/etl-src"
-                    BINARY_DIR          "/home/sourish/AGUA-Uart/build/_deps/etl-build"
+                    SOURCE_DIR          "/home/sourish/AGUA-Uart/Sync_esp/build/_deps/etl-src"
+                    BINARY_DIR          "/home/sourish/AGUA-Uart/Sync_esp/build/_deps/etl-build"
                     CONFIGURE_COMMAND   ""
                     BUILD_COMMAND       ""
                     INSTALL_COMMAND     ""

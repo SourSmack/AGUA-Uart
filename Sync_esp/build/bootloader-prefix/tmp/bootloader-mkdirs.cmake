@@ -10,18 +10,18 @@ if(NOT EXISTS "/home/sourish/esp-idf-v6.0.2/components/bootloader/subproject")
   file(MAKE_DIRECTORY "/home/sourish/esp-idf-v6.0.2/components/bootloader/subproject")
 endif()
 file(MAKE_DIRECTORY
-  "/home/sourish/AGUA-Uart/build/bootloader"
-  "/home/sourish/AGUA-Uart/build/bootloader-prefix"
-  "/home/sourish/AGUA-Uart/build/bootloader-prefix/tmp"
-  "/home/sourish/AGUA-Uart/build/bootloader-prefix/src/bootloader-stamp"
-  "/home/sourish/AGUA-Uart/build/bootloader-prefix/src"
-  "/home/sourish/AGUA-Uart/build/bootloader-prefix/src/bootloader-stamp"
+  "/home/sourish/AGUA-Uart/Sync_esp/build/bootloader"
+  "/home/sourish/AGUA-Uart/Sync_esp/build/bootloader-prefix"
+  "/home/sourish/AGUA-Uart/Sync_esp/build/bootloader-prefix/tmp"
+  "/home/sourish/AGUA-Uart/Sync_esp/build/bootloader-prefix/src/bootloader-stamp"
+  "/home/sourish/AGUA-Uart/Sync_esp/build/bootloader-prefix/src"
+  "/home/sourish/AGUA-Uart/Sync_esp/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "/home/sourish/AGUA-Uart/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "/home/sourish/AGUA-Uart/Sync_esp/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "/home/sourish/AGUA-Uart/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "/home/sourish/AGUA-Uart/Sync_esp/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
 endif()

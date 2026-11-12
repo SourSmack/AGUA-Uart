@@ -1,2 +1,2 @@
-source /home/sourish/AGUA-Uart/build/gdbinit/symbols
-source /home/sourish/AGUA-Uart/build/gdbinit/connect
+source /home/sourish/AGUA-Uart/Sync_esp/build/gdbinit/symbols
+source /home/sourish/AGUA-Uart/Sync_esp/build/gdbinit/connect

@@ -3,9 +3,9 @@
 # No other meaning or use of this file is supported.
 
 method=git
-command=/home/sourish/.espressif/tools/cmake/4.0.3/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/sourish/AGUA-Uart/build/_deps/etl-subbuild/etl-populate-prefix/tmp/etl-populate-gitclone.cmake
-source_dir=/home/sourish/AGUA-Uart/build/_deps/etl-src
-work_dir=/home/sourish/AGUA-Uart/build/_deps
+command=/home/sourish/.espressif/tools/cmake/4.0.3/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/sourish/AGUA-Uart/Sync_esp/build/_deps/etl-subbuild/etl-populate-prefix/tmp/etl-populate-gitclone.cmake
+source_dir=/home/sourish/AGUA-Uart/Sync_esp/build/_deps/etl-src
+work_dir=/home/sourish/AGUA-Uart/Sync_esp/build/_deps
 repository=https://github.com/etlcpp/etl.git
 remote=origin
 init_submodules=TRUE

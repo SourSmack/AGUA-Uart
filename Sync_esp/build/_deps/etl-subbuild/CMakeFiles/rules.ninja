@@ -23,7 +23,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /home/sourish/.espressif/tools/cmake/4.0.3/bin/cmake --regenerate-during-build -S/home/sourish/AGUA-Uart/build/_deps/etl-subbuild -B/home/sourish/AGUA-Uart/build/_deps/etl-subbuild
+  command = /home/sourish/.espressif/tools/cmake/4.0.3/bin/cmake --regenerate-during-build -S/home/sourish/AGUA-Uart/Sync_esp/build/_deps/etl-subbuild -B/home/sourish/AGUA-Uart/Sync_esp/build/_deps/etl-subbuild
   description = Re-running CMake...
   generator = 1
 

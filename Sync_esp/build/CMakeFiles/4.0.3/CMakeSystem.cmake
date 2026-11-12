@@ -1,9 +1,9 @@
-set(CMAKE_HOST_SYSTEM "Linux-7.0.0-42-generic")
+set(CMAKE_HOST_SYSTEM "Linux-7.0.0-43-generic")
 set(CMAKE_HOST_SYSTEM_NAME "Linux")
-set(CMAKE_HOST_SYSTEM_VERSION "7.0.0-42-generic")
+set(CMAKE_HOST_SYSTEM_VERSION "7.0.0-43-generic")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64")
 
-include("/home/sourish/AGUA-Uart/build/toolchain/toolchain-esp32.cmake")
+include("/home/sourish/AGUA-Uart/Sync_esp/build/toolchain/toolchain-esp32.cmake")
 
 set(CMAKE_SYSTEM "Generic")
 set(CMAKE_SYSTEM_NAME "Generic")
