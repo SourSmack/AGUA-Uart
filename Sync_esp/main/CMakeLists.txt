@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 idf_component_register(
     SRCS "SynchUartEsp.cpp"
-    PRIV_REQUIRES Mission Courier driver  
+    PRIV_REQUIRES InlineOS  driver  
 )
 set(ETL_NO_TESTS ON CACHE BOOL "" FORCE)
 set(ETL_NO_CPP_VERSION_CHECK ON CACHE BOOL "" FORCE)
